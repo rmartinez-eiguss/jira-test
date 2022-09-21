@@ -68,7 +68,7 @@ class JiraIssueService
                     ],
                 )
             ];
-echo json_encode($this->jiraIssuesService->get($issueId, $queryParam));exit();
+            // echo json_encode($this->jiraIssuesService->get($issueId, $queryParam));exit();
             return $this->jiraIssuesService->get($issueId, $queryParam);
         } catch (\Exception $e) {
             print('Error Occured! ');
