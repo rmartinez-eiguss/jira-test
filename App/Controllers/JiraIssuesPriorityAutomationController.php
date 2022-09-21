@@ -17,6 +17,21 @@ class JiraIssuesPriorityAutomationController extends BaseController
 
     public function __invoke(Request $request, Response $response)
     {
-        echo json_encode($this->getParams($request)); exit();
+        $issueId = $this->getParam($request, "issueId");
+
+        if(empty($issueId)){
+            throw new \Exception("Invalid issue id");
+        }
+
+        $priority = $this->jiraIssueService->getIssuePriority($issueId);
+        $this->jiraIssueService->setIssuePriority($issueId, $priority);
+
+        return $this->jsonResponse(
+            $response,
+            ['issue' => [
+                'id' => $issueId,
+                'priority' => $priority,
+            ]]
+        );
     }
 }

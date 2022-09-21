@@ -5,5 +5,4 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 $app->group('/[{path:.*}]', function (RouteCollectorProxy $app) {
     $app->get('', App\Controllers\JiraIssuesPriorityController::class);
-    $app->post('', App\Controllers\JiraIssuesPriorityAutomationController::class);
 });
