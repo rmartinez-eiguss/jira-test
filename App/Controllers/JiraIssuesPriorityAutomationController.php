@@ -18,7 +18,7 @@ class JiraIssuesPriorityAutomationController extends BaseController
     public function __invoke(Request $request, Response $response)
     {
         $issueId = $this->getParam($request, "issueId");
-
+echo "hola";exit();
         if(empty($issueId)){
             throw new \Exception("Invalid issue id");
         }
