@@ -25,7 +25,7 @@ class JiraIssueService
     ];
     protected $severityFieldId = "customfield_11103";
     protected $severitiesScore = [
-        "Critical" => 100,
+        "Meteor" => 100,
         "Major" => 75,
         "Moderate" => 50,
         "Minor" => 25,
